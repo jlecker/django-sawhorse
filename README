@@ -1,6 +1,25 @@
 This is specialized Django project intended to be used in the development of
 individual Django apps outside of a larger project.
 
+Intended to be used with virtualenv & virtualenvwrapper.
+
+I put this up on GitHub as soon as I first got it working. It will be fixed up
+and better documented soon.
+
+
+Usage:
+
+1. Add SAWHORSE_HOME to your environment (analogous to virtualenvwrapper's
+WORKON_HOME). This is where Sawhorse will put development files for each app.
+2. Install Sawhorse into an app's virtualenv with pip.
+3. You may add a required_settings.py and/or a local_settings.py to your app
+to override default settings from Sawhorse.
+4. Run management commands with shmanage.py <command>.
+5. That's it.
+
+
+Why did I do this?
+
 In my personal development workflow, I often finding myself creating an
 "example project" with a new app in order to run the tests, run the development
 server, etc, even if I am developing the app in a "standalone" fashion (my
@@ -12,3 +31,9 @@ app. Sawhorse, then, is intended to work as that "example project", but for any
 app. This way, only a minimal amount of extra configuration needs to be
 included with the app itself, but it's still very easy to get up-and-running
 when developing or researching a new app.
+
+
+Coming soon:
+
+Better documentation, better support for different types of apps. Possibly
+I will realize this whole thing is a bad idea and scrap it. Feedback welcome!
