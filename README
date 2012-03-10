@@ -1,0 +1,14 @@
+This is specialized Django project intended to be used in the development of
+individual Django apps outside of a larger project.
+
+In my personal development workflow, I often finding myself creating an
+"example project" with a new app in order to run the tests, run the development
+server, etc, even if I am developing the app in a "standalone" fashion (my
+preferred way to start a new app). Worse, because I want myself and others to
+be able to run the app by itself from a clone of the repo, I usually end up
+including this example project with the app. This seems messy and undesirable,
+as the example project really has nothing to do with the functionality of the
+app. Sawhorse, then, is intended to work as that "example project", but for any
+app. This way, only a minimal amount of extra configuration needs to be
+included with the app itself, but it's still very easy to get up-and-running
+when developing or researching a new app.
