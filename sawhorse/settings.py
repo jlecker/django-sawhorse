@@ -30,18 +30,6 @@ ROOT_URLCONF = 'sawhorse.urls'
 
 TEMPLATE_DIRS = [os.path.join(SAWHORSE_HOME, 'templates')]
 
-INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
-    APP_NAME,
-)
-
 
 sys.path.insert(0, '')
 
@@ -54,3 +42,15 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+
+INSTALLED_APPS = [
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+] + INSTALLED_APPS
