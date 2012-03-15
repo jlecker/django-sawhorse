@@ -13,7 +13,7 @@ sqlite database, media root, and static root.
 to override default settings from Sawhorse. required_settings.py can be kept
 with the app so that it will run without any additional configuration.
 local_settings.py can be used for API keys, etc.
-4. Run management commands with shmanage.py <command>.
+4. Run management commands with sawhorse-manage.py <command>.
 5. That's it. If everything works correctly, you should be able to run tests,
 run the development server, and get right to work.
 

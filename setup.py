@@ -11,7 +11,7 @@ setup(
     url='https://github.com/jlecker/django-sawhorse',
     description='An installable Django project for building and testing individual apps.',
     packages=['sawhorse'],
-    scripts=['shmanage.py'],
+    scripts=['sawhorse-manage.py'],
     classifiers=[
         'License :: OSI Approved :: BSD License',
         'Intended Audience :: Developers',
