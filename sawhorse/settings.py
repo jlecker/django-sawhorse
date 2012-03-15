@@ -31,6 +31,8 @@ ROOT_URLCONF = 'sawhorse.urls'
 TEMPLATE_DIRS = [os.path.join(SAWHORSE_HOME, 'templates')]
 
 
+INSTALLED_APPS = [APP_NAME]
+
 sys.path.insert(0, '')
 
 try:
