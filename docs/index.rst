@@ -25,6 +25,11 @@ Quick Start
    ``sawhorse-manage.py``, like so::
      
      sawhorse-manage.py runserver
+   
+   NOTE: ``sawhorse-manage.py`` expects your app to have the same name as the
+   active virtualenv, and it expects to be able to import it. The easiest way
+   to guarantee this is to run ``sawhorse-manage.py`` in the parent directory
+   of the app package (so it can be found in the current directory).
 
 
 Additional Considerations
