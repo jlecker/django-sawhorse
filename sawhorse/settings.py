@@ -5,6 +5,7 @@ import sys
 SAWHORSE_HOME = os.environ['SAWHORSE_HOME']
 APP_NAME = os.environ['SAWHORSE_APP']
 APP_ROOT = os.path.join(SAWHORSE_HOME, APP_NAME)
+PROJECT_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)))
 
 
 DEBUG = True
@@ -19,16 +20,16 @@ DATABASES = {
 
 SITE_ID = 1
 SECRET_KEY = ' '
+ROOT_URLCONF = 'sawhorse.urls'
 
 MEDIA_ROOT = os.path.join(APP_ROOT, 'media')
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(APP_ROOT, 'static')
 STATIC_URL = '/static/'
+STATICFILES_FINDERS = ['django.contrib.staticfiles.finders.AppDirectoriesFinder']
 
-ROOT_URLCONF = 'sawhorse.urls'
-
-TEMPLATE_DIRS = [os.path.join(SAWHORSE_HOME, 'templates')]
+TEMPLATE_LOADERS = ['django.template.loaders.app_directories.Loader']
 
 
 INSTALLED_APPS = [APP_NAME]
