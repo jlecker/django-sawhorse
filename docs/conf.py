@@ -1,5 +1,9 @@
 import sys, os
 
+sys.path.insert(0, os.path.join(os.path.abspath(os.path.dirname(__file__)), '..'))
+
+import sawhorse
+
 
 extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo']
 
@@ -12,7 +16,7 @@ master_doc = 'index'
 project = u'Django Sawhorse'
 copyright = u'2012, James Lecker'
 
-version = '0.1.2'
+version = sawhorse.__version__
 release = version
 
 exclude_patterns = ['_build']
