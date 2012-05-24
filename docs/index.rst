@@ -36,10 +36,10 @@ Additional Considerations
 -------------------------
 
 If your app has settings which are required to run out-of-the-box, they can be
-placed in the module *required_settings.py*. The recommended location for this
-module is in the root directory of your app (NOT the package directory, but
-where you keep things like the README, setup.py, etc). This is also where you
-should run sawhorse-manage.py.
+placed in the module *required_settings.py*. This can be placed anywhere it can
+be imported, but the recommended location is in the parent directory of the
+app package (where it will be found if you are also running
+``sawhorse-manage.py`` there, as recommended).
 
 The *required_settings.py* module can be kept with your app so that it can be
 easily run with Sawhorse, but if your app also requires API keys or other
