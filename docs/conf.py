@@ -14,7 +14,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 project = u'Django Sawhorse'
-copyright = u'2012, James Lecker'
+copyright = u'2014, James Lecker'
 
 version = sawhorse.__version__
 release = version
