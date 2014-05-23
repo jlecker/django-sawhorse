@@ -3,19 +3,7 @@ individual Django apps outside of a larger project. It is intended to be used
 with virtualenv & virtualenvwrapper.
 
 
-Usage:
-
-1. Add SAWHORSE_HOME to your environment (analogous to virtualenvwrapper's
-WORKON_HOME). Sawhorse will create a subdirectory for each app to contain an
-sqlite database, media root, and static root.
-2. Install Sawhorse into an app's virtualenv with pip.
-3. You may add a required_settings.py and/or a local_settings.py to your app
-to override default settings from Sawhorse. required_settings.py can be kept
-with the app so that it will run without any additional configuration.
-local_settings.py can be used for API keys, etc.
-4. Run management commands with sawhorse-manage.py <command>.
-5. That's it. If everything works correctly, you should be able to run tests,
-run the development server, and get right to work.
+Docs: http://django-sawhorse.readthedocs.org/
 
 
 Why did I do this?
@@ -31,8 +19,3 @@ app. Sawhorse, then, is intended to work as that "example project", but for any
 app. This way, only a minimal amount of extra configuration needs to be
 included with the app itself, but it's still very easy to get up-and-running
 when developing or researching a new app.
-
-
-Coming soon:
-
-More complete documentation.

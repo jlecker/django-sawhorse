@@ -4,7 +4,8 @@ Django Sawhorse
 Sawhorse is an installable Django project intended to be used in the
 development of "standalone" Django apps. It is designed to eliminate the need
 to create an "example project" which is used only in the development of the
-app. It is the "example project" for any app.
+app. It is the "example project" for any app. Requires virtualenv and
+virtualenvwrapper.
 
 
 Quick Start
@@ -14,7 +15,9 @@ Quick Start
    (modify the path to your desired location). Sawhorse will create a
    subdirectory in this location for every app that you use with it. This is
    similar to the way ``WORKON_HOME`` works in virtualenvwrapper (which you
-   should be using anyway, especially since Sawhorse requires it).
+   should be using anyway, especially since Sawhorse requires it). Sawhorse
+   will add items here needed to run the app: SQLite database, media root, and
+   static root.
 
 2. Use pip to install Sawhorse into the development virtualenv for an app. For
    now, the best way to do this is to install directly from GitHub::
@@ -25,6 +28,9 @@ Quick Start
    ``sawhorse-manage.py``, like so::
      
      sawhorse-manage.py runserver
+   
+   If everything is working correctly, you should be able to run tests, run the
+   development server, and run other commands to get right to work.
    
    NOTE: ``sawhorse-manage.py`` expects your app to have the same name as the
    active virtualenv, and it expects to be able to import it. The easiest way
