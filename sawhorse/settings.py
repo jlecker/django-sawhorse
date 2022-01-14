@@ -29,7 +29,15 @@ STATIC_ROOT = os.path.join(APP_ROOT, 'static')
 STATIC_URL = '/static/'
 STATICFILES_FINDERS = ['django.contrib.staticfiles.finders.AppDirectoriesFinder']
 
-TEMPLATE_LOADERS = ['django.template.loaders.app_directories.Loader']
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': ['django.contrib.auth.context_processors.auth'],
+        }
+    }
+]
 
 
 INSTALLED_APPS = [APP_NAME]

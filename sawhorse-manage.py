@@ -25,7 +25,7 @@ if __name__ == '__main__':
     app_name = os.environ.setdefault('SAWHORSE_APP', venv[len(workon_home) + 1:])
     app_root = os.path.join(sawhorse_home, app_name)
     if not os.path.exists(app_root):
-        os.mkdir(app_root, 0755)
+        os.mkdir(app_root, 0o755)
     
     os.environ['DJANGO_SETTINGS_MODULE'] = 'sawhorse.settings'
 
