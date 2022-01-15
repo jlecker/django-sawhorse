@@ -9,7 +9,7 @@ setup(
     author='James Lecker Jr',
     author_email='james@jameslecker.com',
     url='https://github.com/jlecker/django-sawhorse',
-    description='An installable Django project for building and testing individual apps.',
+    description='An installable Django project to facilitate the development of pluggable apps.',
     packages=['sawhorse'],
     scripts=['sawhorse-manage.py'],
     classifiers=[

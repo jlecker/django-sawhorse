@@ -2,47 +2,52 @@ import os
 import sys
 
 
-SAWHORSE_HOME = os.environ['SAWHORSE_HOME']
-APP_NAME = os.environ['SAWHORSE_APP']
-APP_ROOT = os.path.join(SAWHORSE_HOME, APP_NAME)
-PROJECT_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)))
+SAWHORSE_APP = os.environ['SAWHORSE_APP']
+SAWHORSE_ROOT = os.environ['SAWHORSE_ROOT']
 
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(APP_ROOT, 'sqlite.db'),
+        'NAME': os.path.join(SAWHORSE_ROOT, 'sqlite.db'),
     }
 }
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 SITE_ID = 1
 SECRET_KEY = ' '
 ROOT_URLCONF = 'sawhorse.urls'
 
-MEDIA_ROOT = os.path.join(APP_ROOT, 'media')
+MIDDLEWARE = [
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+]
+
+MEDIA_ROOT = os.path.join(SAWHORSE_ROOT, 'media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(APP_ROOT, 'static')
-STATIC_URL = '/static/'
 STATICFILES_FINDERS = ['django.contrib.staticfiles.finders.AppDirectoriesFinder']
+STATIC_URL = '/static/'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': ['django.contrib.auth.context_processors.auth'],
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
+            ],
         }
     }
 ]
 
+INSTALLED_APPS = [SAWHORSE_APP]
 
-INSTALLED_APPS = [APP_NAME]
-
-sys.path.insert(0, '')
 
 try:
     from required_settings import *
